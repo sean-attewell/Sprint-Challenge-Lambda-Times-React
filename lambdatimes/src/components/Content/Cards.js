@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Card from './Card';
+import PT from 'prop-types';
 
 const Cards = props => {
   return (
@@ -9,11 +10,16 @@ const Cards = props => {
       {props.cards.map(card => 
       <Card 
       card={card}
+      key={card.headline}
       />)}
     </div>
   )
 }
 
 // Make sure you include prop types for all of your incoming props
+
+Cards.propTypes = {
+  cards: PT.array,
+}
 
 export default Cards;
